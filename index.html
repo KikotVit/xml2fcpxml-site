@@ -190,6 +190,27 @@
         <em>File ▸ Relink Files</em> — the guessed rates are right for most cameras.</p>
       </article>
 
+      <article id="empty">
+        <h3>Final Cut imported, but the timeline is empty</h3>
+        <p>You import the FCPXML, Final Cut says something like <em>Invalid edit with no respective media</em>, and
+        the project opens with gaps instead of clips. Nothing is broken: Final Cut simply cannot find the footage
+        at the moment in time the file claims it lives.</p>
+        <p>It happens with footage that has no timecode of its own — screen recordings, stock clips, anything
+        exported from another app. Premiere still needs a number, so it invents one from the file's creation time
+        and writes it into the XML as though the camera had recorded it. Final Cut then opens the real file, sees
+        a clip that starts at zero, and finds nothing at, say, four in the afternoon.</p>
+        <ol>
+          <li>Click <em>Locate Media…</em> and choose the folders with the original footage. The app lists the
+          folders Premiere used, so you know what to look for; subfolders are searched too.</li>
+          <li>Wait for <em>Reading media</em> to finish. The app now takes the timecode from the files themselves
+          instead of Premiere's word, and the warning at the top disappears.</li>
+          <li>Save or open the result again. The clips land where they belong.</li>
+        </ol>
+        <p class="tip">A file the app could not read stays listed in grey, together with the folder Premiere kept
+        it in: add that folder as well, or relink that one clip in Final Cut with <em>File ▸ Relink Files</em>.
+        Picking a second folder adds to the first, so footage spread over several drives is no problem.</p>
+      </article>
+
       <article id="titles">
         <h3>What carries over in titles</h3>
         <ul>
